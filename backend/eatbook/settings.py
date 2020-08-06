@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'book',
     'rest_framework',
     'corsheaders',
+    'knox',
 ]
 
 MIDDLEWARE = [
@@ -105,9 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ]
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
 }
 
 CORS_ORIGIN_WHITELIST = ['http://localhost:3000']
